@@ -1,0 +1,3 @@
+infra/vault/keys/*
+infra/vault/logs/*
+infra/vault/cert/*

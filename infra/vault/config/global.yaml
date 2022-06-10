@@ -1,0 +1,23 @@
+global:
+  # enabled is the master enabled switch. Setting this to true or false
+  # will enable or disable all the components within this chart by default.
+  enabled: true
+  # Image pull secret to use for registry authentication.
+  # Alternatively, the value may be specified as an array of strings.
+  imagePullSecrets: []
+  # imagePullSecrets:
+  #   - name: image-pull-secret
+  # TLS for end-to-end encrypted transport
+  tlsDisable: true
+  # If deploying to OpenShift
+  openshift: false
+  # Create PodSecurityPolicy for pods
+  psp:
+    enable: false
+    # Annotation for PodSecurityPolicy.
+    # This is a multi-line templated string map, and can also be set as YAML.
+    annotations: |
+      seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default,runtime/default
+      apparmor.security.beta.kubernetes.io/allowedProfileNames: runtime/default
+      seccomp.security.alpha.kubernetes.io/defaultProfileName:  runtime/default
+      apparmor.security.beta.kubernetes.io/defaultProfileName:  runtime/default
