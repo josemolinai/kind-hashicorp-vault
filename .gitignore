@@ -1,3 +1,6 @@
 infra/vault/keys/*
 infra/vault/logs/*
 infra/vault/cert/*
+!infra/vault/cert/readme.md
+!infra/vault/keys/readme.md
+!infra/vault/logs/readme.md
